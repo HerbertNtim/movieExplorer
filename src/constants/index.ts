@@ -19,8 +19,4 @@ export const navLinks = [
     name: "Watch Trailers",
     href: "#trailer",
   },
-  {
-    name: "Footer",
-    href: "#footer",
-  },
 ]
