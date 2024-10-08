@@ -9,9 +9,9 @@ import { LiaTimesSolid } from "react-icons/lia";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  
   return (
-    <header className="h-[90px] px-16 py-8 flex justify-between items-center relative">
+    <header className="h-[96px] px-16 py-8 flex justify-between items-center relative border-b-2 dark:border-gray-700">
       {/* Desktop Menu */}
       <div className="hidden lg:flex gap-8 text-xl">
         {navLinks.map((link) => (
@@ -48,7 +48,6 @@ const Header = () => {
       {/* Right Section: Theme Switch and Movies */}
       <div className={`flex gap-8 text-lg items-center`}>
         <SwitchTheme />
-        <span>Movies</span>
       </div>
     </header>
   );

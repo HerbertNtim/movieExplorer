@@ -10,7 +10,9 @@ const SwitchTheme = () => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
-
+  
+  if(!mounted) return null;
+  
   return (
     <div className="cursor-pointer">
       {mounted && (currentTheme === "dark" ? (

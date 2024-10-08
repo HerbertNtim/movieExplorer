@@ -7,7 +7,14 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "dark-bg": '#0B0B0B',
+        'dark-button': '#F59115',
+        'dark-section-bg': '#100F11',
+        'dark-card': '#1F1C3F',
+      }
+    }
   },
   plugins: [],
   darkMode: "class",

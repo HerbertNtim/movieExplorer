@@ -1,12 +1,15 @@
 import Header from "@/components/Header";
+import HomeSection from "@/components/HomeSection";
 import React from "react";
 
 const Home = () => {
   return (
-    <main className="flex flex-col w-full h-screen">
+    <main className="flex flex-col">
       <Header />
 
-      <section id="home">Home</section>
+      <section id="home" className="w-full h-[90vh] bg-dark-card-bg">
+        <HomeSection />
+      </section>
 
       <section id="trending">Trending</section>
 
