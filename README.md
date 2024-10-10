@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎬 Movie Explorer
 
-## Getting Started
+A sleek and powerful web application that lets users explore movies and TV shows from The Movie Database (TMDB). With features like browsing popular movies and TV shows, searching by title, and viewing detailed information, Movie Explorer is your go-to platform for entertainment discovery.
 
-First, run the development server:
+[Live Demo](https://switftbooked.vercel.app/) <!-- Add your deployed app link here -->
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Get Popular Movies**: Browse a collection of the most popular movies.
+- **Get Popular TV Shows**: Explore the latest and most popular TV shows.
+- **Search Functionality**: Search for specific movies or TV shows by name.
+- **Responsive Design**: Fully responsive UI for optimal viewing on any device.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js**: A React framework with server-side rendering (SSR) for lightning-fast page loads.
+- **TypeScript**: Type-safe development for a more robust codebase.
+- **TMDB API**: Fetching movie and TV show data from The Movie Database API.
+- **Axios**: Promise-based HTTP client for smooth API requests and error handling.
+- **Tailwind CSS** (optional): Utility-first CSS framework for fast and easy styling.
 
-## Learn More
+## 🖼️ Screenshots
 
-To learn more about Next.js, take a look at the following resources:
+### Homepage (Popular Movies)
+![homepage]([path_to_screenshot](https://github.com/HerbertNtim/switftbooked/blob/master/public/Screenshot%20from%202024-10-10%2018-25-59.png)) <!-- Add screenshot link here -->
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Search Results
+![search](https://github.com/HerbertNtim/switftbooked/blob/master/public/Screenshot%20from%202024-10-10%2018-27-01.png) <!-- Add screenshot link here -->
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ⚙️ Installation and Setup
 
-## Deploy on Vercel
+1. **Clone the Repository**:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   git clone https://github.com/your-username/movie-explorer.git
