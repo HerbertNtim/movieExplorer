@@ -6,9 +6,10 @@ import { useEffect, useState } from "react";
 type bgImage = {
   backdrop_path: string;
   title: string;
+  name: string;
   overview: string;
   release_date: string;
-}
+};
 
 const HomeSection = () => {
   const [bgImageUrl, setBgImageUrl] = useState<bgImage>(); // Store background image URL
@@ -30,25 +31,34 @@ const HomeSection = () => {
     }
   };
 
-  console.log(bgImageUrl);
-
   // UseEffect to call the background image function on mount
   useEffect(() => {
     getBackgroundImage();
   }, []);
 
+
+  if (!bgImageUrl)
+    return (
+      <div className="h-screen text-white relative">
+        <div className="absolute top-0 left-0 w-full h-full bg-black/70 flex items-center justify-center -z-10 shimmer" />
+      </div>
+    );
+
   return (
-    <section id="home"
-      className="w-full h-[100vh] relative bg-cover bg-center bg-no-repeat py-8"
+    <section
+      id="home"
+      className="w-full h-[100vh] relative bg-cover bg-center bg-no-repeat py-8 border-b-2 border-gray-700"
       style={{
-        backgroundImage: bgImageUrl ? `url(https://image.tmdb.org/t/p/original${bgImageUrl.backdrop_path})` : "none",
+        backgroundImage: bgImageUrl
+          ? `url(https://image.tmdb.org/t/p/original${bgImageUrl.backdrop_path})`
+          : "none",
         opacity: 0.9,
         width: "100%",
         height: "109vh",
       }}
     >
       {imageLoading && (
-        <div className="absolute top-0 left-0 w-full h-full bg-black/75 flex items-center justify-center shimmer -z-10" />
+        <div className="absolute top-0 left-0 w-full h-full bg-black/75 flex items-center justify-center shimmer -z-10"/>
       )}
 
       {/* cover */}
@@ -57,11 +67,18 @@ const HomeSection = () => {
         aria-hidden="true"
       />
 
-      <div className="absolute top-1/4 flex flex-col items-center gap-8 px-8 md:px-16 lg-px-24 py-16 md:py-24 lg:py-32">
-        <h1 className="text-6xl font-black text-center py-4 px-8 text-amber-400 rounded-lg">{bgImageUrl?.title || 'Showbies'}</h1>
+      <div className="top-1/4 max-w-6xl flex flex-col items-center justify-center gap-8 px-8 md:px-16 lg:px-24 py-16 md:py-24 lg:py-32">
+        <h1 className="text-4xl sm:text-7xl font-black text-center py-4 px-8 text-amber-400">
+          {bgImageUrl?.title || bgImageUrl?.name}
+        </h1>
 
-        <p className="text-white text-xl">{bgImageUrl?.overview}</p>
-        <p className="text-dark-button text-lg">{bgImageUrl?.release_date}</p>
+        <p className="text-white text-xl sm:text-2xl text-center max-w-3xl mx-auto">
+          {bgImageUrl?.overview && bgImageUrl.overview.length > 200 ? bgImageUrl.overview.slice(0, 200) + "..." : bgImageUrl?.overview}
+        </p>
+
+        <p className="text-dark-button text-xl font-semibold text-center">
+          {bgImageUrl?.release_date || "2024"}
+        </p>
       </div>
     </section>
   );

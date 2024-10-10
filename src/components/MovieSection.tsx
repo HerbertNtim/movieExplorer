@@ -1,62 +1,45 @@
-'use client'
+"use client";
 
-import { fetchMovieFromTMDB } from "@/api/tmdb.service"
-import Image from "next/image";
-import { useEffect, useState } from "react"
+import { movieCategories } from "@/constants";
+import { useState } from "react";
 
-type Genre = {
-  id: number;
+type MovieType = {
   name: string;
-}
+  type: string;
+};
 
 const MovieSection = () => {
-  const [genres, setGenres] = useState<Array<Genre>>([]); 
-  const [error, setError] = useState<string | null>(null);
-  const [genre, setGenre] = useState<string>('movie');
-
-  useEffect(() => {
-    const getGenres = async () => {
-      try {
-        const data = await fetchMovieFromTMDB(`genre/${genre}/list?language=en`);
-        setGenres(data.genres); 
-      } catch (error) {
-        console.error("Error fetching genres:", error);
-        setError("Failed to fetch genres. Please refresh.!!! 😢");
-      }
-    };
-
-    getGenres();
-  }, [genre])
-
-  console.log(genres);
+  const [movieType, setMovieType] = useState<MovieType>({
+    name: "Now Playing",
+    type: "now_playing",
+  });
 
   return (
-    <div className="w-full h-full px-8 py-8">
-      <div className="flex items-center justify-center gap-4">
-        <span className={`text-2xl cursor-pointer ${genre === 'movie' ? 'dark:bg-dark-button px-4 py-2 rounded-lg font-medium text-black' : ''}`} onClick={() => setGenre('movie')}>Movie</span>
-        <span className={`text-2xl cursor-pointer ${genre === 'tv' ? 'dark:bg-dark-button px-4 py-2 rounded-lg font-medium text-black' : ''}`} onClick={() => setGenre('tv')}>TV</span>
-      </div>
+    <section id="movies" className="w-full h-[100vh]">
+      <div className="flex flex-col">
+        <h1 className="text-4xl text-center py-8 font-bold">Movies</h1>
 
-      {error ? (
-        <div className="text-red-500 text-center w-full h-full relative">
-          <h1 className="text-3xl sm:text-7xl absolute top-1/2">{error}</h1>
-        </div>
-      ) : (
-        <>
-          {genres.map((genre) => (
-            <div key={genre.id} className="w-full h-ful flex bg-white">
-              <div className="flex flex-col gap-4 bg-bl">
-                <Image src={`https://api.themoviedb.org/3/${genre}/${genre.id}/images`} alt="genre-img" fill>
-
-                </Image>
-                <h1>{genre.name}</h1>
-              </div>
-            </div>   
+        {/* CHANGE BASED ON TYPE */}
+        <div className="flex items-center justify-center  sm:py-10">
+          {movieCategories.map((category) => (
+            <button
+              key={category.name}
+              onClick={() => setMovieType(category)}
+              className={`sm:text-lg px-4 py-2 mx-2 rounded-lg ${
+                movieType.type === category.type
+                  ? "bg-dark-button text-black"
+                  : "hover:bg-dark-button hover:text-black"
+              }`}
+            >
+              {category.name}
+            </button>
           ))}
-        </>
-      )}
-    </div>
-  )
-}
+        </div>
+        {/* MOVIE SLIDER */}
+        <div className="bg-red-300 h-[50vh]">slider here</div>
+      </div>
+    </section>
+  );
+};
 
-export default MovieSection
+export default MovieSection;
