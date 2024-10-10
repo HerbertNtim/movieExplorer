@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import HomeSection from "@/components/HomeSection";
 import MovieSection from "@/components/MovieSection";
+import TVSection from "@/components/TVSection";
 import React from "react";
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
       <Header />
       <HomeSection />
       <MovieSection />
+      <TVSection />
     </main>
   );
 };

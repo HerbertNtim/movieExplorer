@@ -11,19 +11,19 @@ import {
 } from "react-icons/bi";
 import MovieSliderSkeleton from "./MovieSliderSkeleton";
 
-type MovieType = {
+type TvType = {
   name: string;
   type: string;
 };
 
-interface Movie {
-  title: string;
+interface TV {
+  name: string;
   backdrop_path: string;
-  release_date: string;
+  first_air_date: string;
 }
 
-const MovieSlider = ({ movieType }: { movieType: MovieType }) => {
-  const [movies, setMovies] = useState<Movie[]>([]);
+const TvSlider = ({ tvType }: { tvType: TvType }) => {
+  const [movies, setMovies] = useState<TV[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [showArrows, setShowArrows] = useState(false);
   const sliderRef = useRef<HTMLDivElement | null>(null);
@@ -33,7 +33,7 @@ const MovieSlider = ({ movieType }: { movieType: MovieType }) => {
     const getMovies = async () => {
       try {
         const allMovies = await fetchMovieFromTMDB(
-          `/movie/${movieType.type}?language=en-US&page=1`
+          `/tv/${tvType.type}?language=en-US&page=1`
         );
         setMovies(allMovies.results);
         setError(null); // Clear previous errors
@@ -44,7 +44,7 @@ const MovieSlider = ({ movieType }: { movieType: MovieType }) => {
     };
 
     getMovies();
-  }, [movieType]);
+  }, [tvType]);
 
   // Scroll slider to the left
   const scrollLeft = () => {
@@ -97,13 +97,13 @@ const MovieSlider = ({ movieType }: { movieType: MovieType }) => {
       >
         {movies.map((movie) => (
           <div
-            key={movie.title}
+            key={movie.name}
             className="flex flex-col gap-4 flex-shrink-0 w-full sm:w-[400px] h-full"
           >
             <div className="rounded-lg overflow-hidden h-[300px]">
               <Image
                 src={SMALL_IMG_BASE_URL + movie.backdrop_path}
-                alt={movie.title}
+                alt={movie.name}
                 width={400}
                 height={230}
                 className="object-cover w-full h-full transition-transform duration-500 ease-in-out hover:scale-110"
@@ -113,8 +113,8 @@ const MovieSlider = ({ movieType }: { movieType: MovieType }) => {
 
             {/* TEXT */}
             <div className="text-center">
-              <h2 className="text-xl font-bold">{movie.title}</h2>
-              <p className="text-gray-400 mt-2">{movie.release_date}</p>
+              <h2 className="text-xl font-bold">{movie.name}</h2>
+              <p className="text-gray-400 mt-2">{movie.first_air_date}</p>
             </div>
           </div>
         ))}
@@ -144,4 +144,4 @@ const MovieSlider = ({ movieType }: { movieType: MovieType }) => {
   );
 };
 
-export default MovieSlider;
+export default TvSlider;

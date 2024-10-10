@@ -2,6 +2,7 @@
 
 import { fetchMovieFromTMDB } from "@/api/tmdb.service";
 import { useEffect, useState } from "react";
+import HomeImageSkeleton from "./HomeImageSkeleton";
 
 type bgImage = {
   backdrop_path: string;
@@ -37,10 +38,10 @@ const HomeSection = () => {
   }, []);
 
 
-  if (!bgImageUrl)
+  if (!bgImageUrl?.backdrop_path)
     return (
-      <div className="h-screen text-white relative">
-        <div className="absolute top-0 left-0 w-full h-full bg-black/70 flex items-center justify-center -z-10 shimmer" />
+      <div className="w-full h-[100vh] p-16">
+        <HomeImageSkeleton />
       </div>
     );
 
@@ -58,7 +59,7 @@ const HomeSection = () => {
       }}
     >
       {imageLoading && (
-        <div className="absolute top-0 left-0 w-full h-full bg-black/75 flex items-center justify-center shimmer -z-10"/>
+        <HomeImageSkeleton />
       )}
 
       {/* cover */}
