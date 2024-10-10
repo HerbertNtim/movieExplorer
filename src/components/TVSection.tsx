@@ -16,7 +16,7 @@ const TVSection = () => {
   })
 
   return (
-    <section id="tv" className="w-full h-[100vh]  bg-dark-section-bg border-b-2 border-gray-900">
+    <section id="tv-shows" className="w-full h-[100vh]  bg-dark-section-bg border-b-2 border-gray-900">
       <div className="flex flex-col">
         <h1 className="text-4xl text-center py-8 font-bold">TV Shows</h1>
 

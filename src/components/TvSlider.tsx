@@ -30,7 +30,7 @@ const TvSlider = ({ tvType }: { tvType: TvType }) => {
 
   // Fetch movies based on the selected category
   useEffect(() => {
-    const getMovies = async () => {
+    const getTvs = async () => {
       try {
         const allMovies = await fetchMovieFromTMDB(
           `/tv/${tvType.type}?language=en-US&page=1`
@@ -43,7 +43,7 @@ const TvSlider = ({ tvType }: { tvType: TvType }) => {
       }
     };
 
-    getMovies();
+    getTvs();
   }, [tvType]);
 
   // Scroll slider to the left
@@ -125,7 +125,7 @@ const TvSlider = ({ tvType }: { tvType: TvType }) => {
         <>
           <button
             className="absolute top-1/2 -translate-y-1/2 left-5 md:left-24 flex items-center justify-center
-            w-20 h-20 rounded-full bg-dark-button bg-opacity-50 hover:bg-opacity-75 text-white z-10"
+            w-20 h-20 rounded-full bg-dark-button bg-opacity-50 hover:bg-opacity-75 text-black z-10"
             onClick={scrollLeft}
           >
             <BiChevronLeft size={50} />
@@ -133,7 +133,7 @@ const TvSlider = ({ tvType }: { tvType: TvType }) => {
 
           <button
             className="absolute top-1/2 -translate-y-1/2 right-5 md:right-24 flex items-center justify-center
-            w-20 h-20 rounded-full bg-dark-button bg-opacity-50 hover:bg-opacity-75 text-white z-10"
+            w-20 h-20 rounded-full bg-dark-button bg-opacity-50 hover:bg-opacity-75 text-black z-10"
             onClick={scrollRight}
           >
             <BiChevronRight size={50} />

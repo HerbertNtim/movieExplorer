@@ -11,6 +11,10 @@ export const navLinks = [
     name: "TV Shows",
     href: "#tv-shows"
   },
+  {
+    name: 'Search',
+    href: '#search'
+  }
 ]
 
 export const movieCategories = [

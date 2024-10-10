@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import HomeSection from "@/components/HomeSection";
 import MovieSection from "@/components/MovieSection";
+import SearchSection from "@/components/SearchSection";
 import TVSection from "@/components/TVSection";
 import React from "react";
 
@@ -11,6 +12,7 @@ const Home = () => {
       <HomeSection />
       <MovieSection />
       <TVSection />
+      <SearchSection />
     </main>
   );
 };

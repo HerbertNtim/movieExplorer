@@ -16,7 +16,7 @@ const MovieSection = () => {
   });
 
   return (
-    <section id="movies" className="w-full h-[100vh]  bg-dark-section-bg border-b-2 border-gray-700 shadow-md mb-3">
+    <section id="movies" className="w-full h-[100vh]  bg-dark-section-bg border-b-2 border-gray-700 shadow-md">
       <div className="flex flex-col">
         <h1 className="text-4xl text-center py-8 font-bold">Movies</h1>
 
