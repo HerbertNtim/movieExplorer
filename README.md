@@ -22,14 +22,8 @@ A sleek and powerful web application that lets users explore movies and TV shows
 ## 🖼️ Screenshots
 
 ### Homepage (Popular Movies)
-![homepage]([path_to_screenshot](https://github.com/HerbertNtim/switftbooked/blob/master/public/Screenshot%20from%202024-10-10%2018-25-59.png)) <!-- Add screenshot link here -->
+![homepage](https://github.com/HerbertNtim/switftbooked/blob/master/public/Screenshot%20from%202024-10-10%2018-25-59.png) <!-- Add screenshot link here -->
 
 ### Search Results
 ![search](https://github.com/HerbertNtim/switftbooked/blob/master/public/Screenshot%20from%202024-10-10%2018-27-01.png) <!-- Add screenshot link here -->
 
-## ⚙️ Installation and Setup
-
-1. **Clone the Repository**:
-
-   ```bash
-   git clone https://github.com/your-username/movie-explorer.git
