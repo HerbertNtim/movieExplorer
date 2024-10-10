@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['api.themoviedb.org']
+    domains: ['image.tmdb.org'],
   }
 };
 

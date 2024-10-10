@@ -4,20 +4,12 @@ export const navLinks = [
     href: "#home",
   },
   {
-    name: "Trending",
-    href: "#trending",
+    name: "Movies",
+    href: "#movies"
   },
   {
-    name: "Top Rated",
-    href: "#top-rated",
-  },
-  {
-    name: "Popular",
-    href: "#popular",
-  },
-  {
-    name: "Watch Trailers",
-    href: "#trailer",
+    name: "TV Shows",
+    href: "#tv-shows"
   },
 ]
 

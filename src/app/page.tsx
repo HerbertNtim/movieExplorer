@@ -6,10 +6,7 @@ const Home = () => {
   return (
     <main className="flex flex-col">
       <Header />
-
-      <section id="home" className="w-full h-[90vh] bg-dark-card-bg">
-        <HomeSection />
-      </section>
+      <HomeSection />
 
       <section id="trending">Trending</section>
 
