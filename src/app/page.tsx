@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import HomeSection from "@/components/HomeSection";
 import MovieSection from "@/components/MovieSection";
@@ -13,6 +14,7 @@ const Home = () => {
       <MovieSection />
       <TVSection />
       <SearchSection />
+      <Footer />
     </main>
   );
 };
